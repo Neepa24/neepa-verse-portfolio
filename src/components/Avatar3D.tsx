@@ -1,11 +1,10 @@
-
 import { useRef, useState } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 import { motion } from 'framer-motion';
 import * as THREE from 'three';
 
-// Minecraft-style blocky Avatar Component
+// Minecraft-style blocky Avatar Component - Female with Long Hair
 function MinecraftAvatar({ position = [0, 0, 0] as [number, number, number], scale = 1, animationType = 'idle' }) {
   const groupRef = useRef<THREE.Group>(null);
   const headRef = useRef<THREE.Group>(null);
@@ -35,8 +34,9 @@ function MinecraftAvatar({ position = [0, 0, 0] as [number, number, number], sca
   });
 
   const skinColor = hovered ? "#FDBCB4" : "#F0A898";
-  const shirtColor = hovered ? "#228B22" : "#5CB85C"; // Minecraft green
-  const pantsColor = hovered ? "#4169E1" : "#1E90FF"; // Minecraft blue
+  const shirtColor = hovered ? "#FF69B4" : "#FF1493"; // Pink shirt for female
+  const pantsColor = hovered ? "#8A2BE2" : "#9370DB"; // Purple pants
+  const hairColor = "#8B4513"; // Brown hair
 
   return (
     <group 
@@ -54,109 +54,176 @@ function MinecraftAvatar({ position = [0, 0, 0] as [number, number, number], sca
           <meshLambertMaterial color={skinColor} />
         </mesh>
         
-        {/* Hair blocks - multiple cubes for pixelated look */}
-        <mesh position={[0, 0.3, -0.2]}>
-          <boxGeometry args={[0.9, 0.3, 0.6]} />
-          <meshLambertMaterial color="#2A1810" />
-        </mesh>
-        <mesh position={[-0.3, 0.2, 0]}>
-          <boxGeometry args={[0.3, 0.4, 0.8]} />
-          <meshLambertMaterial color="#2A1810" />
-        </mesh>
-        <mesh position={[0.3, 0.2, 0]}>
-          <boxGeometry args={[0.3, 0.4, 0.8]} />
-          <meshLambertMaterial color="#2A1810" />
+        {/* Long Hair - Multiple layers for feminine long hair */}
+        {/* Top layer */}
+        <mesh position={[0, 0.3, -0.1]}>
+          <boxGeometry args={[0.9, 0.4, 0.7]} />
+          <meshLambertMaterial color={hairColor} />
         </mesh>
         
-        {/* Eyes - simple black cubes */}
-        <mesh position={[-0.15, 0.1, 0.41]}>
-          <boxGeometry args={[0.1, 0.1, 0.02]} />
+        {/* Side hair layers */}
+        <mesh position={[-0.35, 0.2, 0]}>
+          <boxGeometry args={[0.3, 0.5, 0.8]} />
+          <meshLambertMaterial color={hairColor} />
+        </mesh>
+        <mesh position={[0.35, 0.2, 0]}>
+          <boxGeometry args={[0.3, 0.5, 0.8]} />
+          <meshLambertMaterial color={hairColor} />
+        </mesh>
+        
+        {/* Long hair flowing down - left side */}
+        <mesh position={[-0.5, -0.2, 0.1]}>
+          <boxGeometry args={[0.25, 0.8, 0.3]} />
+          <meshLambertMaterial color={hairColor} />
+        </mesh>
+        <mesh position={[-0.5, -0.8, 0.1]}>
+          <boxGeometry args={[0.25, 0.6, 0.3]} />
+          <meshLambertMaterial color={hairColor} />
+        </mesh>
+        
+        {/* Long hair flowing down - right side */}
+        <mesh position={[0.5, -0.2, 0.1]}>
+          <boxGeometry args={[0.25, 0.8, 0.3]} />
+          <meshLambertMaterial color={hairColor} />
+        </mesh>
+        <mesh position={[0.5, -0.8, 0.1]}>
+          <boxGeometry args={[0.25, 0.6, 0.3]} />
+          <meshLambertMaterial color={hairColor} />
+        </mesh>
+        
+        {/* Back hair layer */}
+        <mesh position={[0, 0, -0.5]}>
+          <boxGeometry args={[0.7, 0.6, 0.2]} />
+          <meshLambertMaterial color={hairColor} />
+        </mesh>
+        <mesh position={[0, -0.4, -0.5]}>
+          <boxGeometry args={[0.6, 0.8, 0.2]} />
+          <meshLambertMaterial color={hairColor} />
+        </mesh>
+        <mesh position={[0, -1, -0.5]}>
+          <boxGeometry args={[0.5, 0.6, 0.2]} />
+          <meshLambertMaterial color={hairColor} />
+        </mesh>
+        
+        {/* Bangs/Fringe */}
+        <mesh position={[0, 0.25, 0.35]}>
+          <boxGeometry args={[0.6, 0.15, 0.1]} />
+          <meshLambertMaterial color={hairColor} />
+        </mesh>
+        
+        {/* Eyes - larger and more feminine */}
+        <mesh position={[-0.15, 0.12, 0.41]}>
+          <boxGeometry args={[0.12, 0.12, 0.02]} />
           <meshLambertMaterial color="#000000" />
         </mesh>
-        <mesh position={[0.15, 0.1, 0.41]}>
-          <boxGeometry args={[0.1, 0.1, 0.02]} />
+        <mesh position={[0.15, 0.12, 0.41]}>
+          <boxGeometry args={[0.12, 0.12, 0.02]} />
           <meshLambertMaterial color="#000000" />
         </mesh>
         
-        {/* Eye whites */}
-        <mesh position={[-0.15, 0.1, 0.4]}>
-          <boxGeometry args={[0.12, 0.12, 0.01]} />
+        {/* Eye whites - larger */}
+        <mesh position={[-0.15, 0.12, 0.4]}>
+          <boxGeometry args={[0.14, 0.14, 0.01]} />
           <meshLambertMaterial color="#FFFFFF" />
         </mesh>
-        <mesh position={[0.15, 0.1, 0.4]}>
-          <boxGeometry args={[0.12, 0.12, 0.01]} />
+        <mesh position={[0.15, 0.12, 0.4]}>
+          <boxGeometry args={[0.14, 0.14, 0.01]} />
           <meshLambertMaterial color="#FFFFFF" />
         </mesh>
         
-        {/* Minecraft-style glasses - simple rectangles */}
-        <mesh position={[0, 0.1, 0.42]}>
-          <boxGeometry args={[0.6, 0.2, 0.05]} />
-          <meshLambertMaterial color="#8B4513" transparent opacity={0.8} />
+        {/* Eyelashes - small decorative blocks */}
+        <mesh position={[-0.15, 0.2, 0.42]}>
+          <boxGeometry args={[0.08, 0.04, 0.01]} />
+          <meshLambertMaterial color="#000000" />
+        </mesh>
+        <mesh position={[0.15, 0.2, 0.42]}>
+          <boxGeometry args={[0.08, 0.04, 0.01]} />
+          <meshLambertMaterial color="#000000" />
         </mesh>
         
-        {/* Nose - tiny cube */}
-        <mesh position={[0, 0, 0.4]}>
-          <boxGeometry args={[0.06, 0.08, 0.06]} />
+        {/* Eyebrows - thinner and more arched */}
+        <mesh position={[-0.15, 0.25, 0.41]}>
+          <boxGeometry args={[0.12, 0.03, 0.01]} />
+          <meshLambertMaterial color={hairColor} />
+        </mesh>
+        <mesh position={[0.15, 0.25, 0.41]}>
+          <boxGeometry args={[0.12, 0.03, 0.01]} />
+          <meshLambertMaterial color={hairColor} />
+        </mesh>
+        
+        {/* Nose - smaller and more delicate */}
+        <mesh position={[0, 0.05, 0.4]}>
+          <boxGeometry args={[0.04, 0.06, 0.04]} />
           <meshLambertMaterial color={skinColor} />
         </mesh>
         
-        {/* Mouth - simple black rectangle */}
-        <mesh position={[0, -0.1, 0.41]}>
-          <boxGeometry args={[0.15, 0.03, 0.01]} />
-          <meshLambertMaterial color="#800000" />
+        {/* Lips - pink and more defined */}
+        <mesh position={[0, -0.05, 0.41]}>
+          <boxGeometry args={[0.12, 0.04, 0.01]} />
+          <meshLambertMaterial color="#FF69B4" />
+        </mesh>
+        
+        {/* Blush on cheeks */}
+        <mesh position={[-0.25, 0.05, 0.35]}>
+          <boxGeometry args={[0.08, 0.06, 0.01]} />
+          <meshLambertMaterial color="#FFB6C1" transparent opacity={0.7} />
+        </mesh>
+        <mesh position={[0.25, 0.05, 0.35]}>
+          <boxGeometry args={[0.08, 0.06, 0.01]} />
+          <meshLambertMaterial color="#FFB6C1" transparent opacity={0.7} />
         </mesh>
       </group>
       
       {/* Neck */}
       <mesh position={[0, 0.6, 0]}>
-        <boxGeometry args={[0.4, 0.2, 0.4]} />
+        <boxGeometry args={[0.35, 0.15, 0.35]} />
         <meshLambertMaterial color={skinColor} />
       </mesh>
       
-      {/* Body - green shirt like Minecraft Steve */}
+      {/* Body - slightly more fitted feminine shape with pink shirt */}
       <mesh position={[0, 0.2, 0]}>
-        <boxGeometry args={[0.8, 1.2, 0.4]} />
+        <boxGeometry args={[0.7, 1.1, 0.35]} />
         <meshLambertMaterial color={shirtColor} />
       </mesh>
       
-      {/* Arms - blocky rectangles */}
-      <mesh position={[-0.6, 0.3, 0]}>
-        <boxGeometry args={[0.4, 1.2, 0.4]} />
+      {/* Arms - slightly thinner */}
+      <mesh position={[-0.55, 0.3, 0]}>
+        <boxGeometry args={[0.35, 1.1, 0.35]} />
         <meshLambertMaterial color={shirtColor} />
       </mesh>
-      <mesh position={[0.6, 0.3, 0]}>
-        <boxGeometry args={[0.4, 1.2, 0.4]} />
+      <mesh position={[0.55, 0.3, 0]}>
+        <boxGeometry args={[0.35, 1.1, 0.35]} />
         <meshLambertMaterial color={shirtColor} />
       </mesh>
       
-      {/* Hands - skin colored cubes */}
-      <mesh position={[-0.6, -0.4, 0]}>
-        <boxGeometry args={[0.4, 0.4, 0.4]} />
+      {/* Hands - more delicate */}
+      <mesh position={[-0.55, -0.35, 0]}>
+        <boxGeometry args={[0.35, 0.35, 0.35]} />
         <meshLambertMaterial color={skinColor} />
       </mesh>
-      <mesh position={[0.6, -0.4, 0]}>
-        <boxGeometry args={[0.4, 0.4, 0.4]} />
+      <mesh position={[0.55, -0.35, 0]}>
+        <boxGeometry args={[0.35, 0.35, 0.35]} />
         <meshLambertMaterial color={skinColor} />
       </mesh>
       
-      {/* Legs - blue pants */}
-      <mesh position={[-0.2, -0.8, 0]}>
-        <boxGeometry args={[0.4, 1.2, 0.4]} />
+      {/* Legs - purple pants */}
+      <mesh position={[-0.18, -0.8, 0]}>
+        <boxGeometry args={[0.35, 1.2, 0.35]} />
         <meshLambertMaterial color={pantsColor} />
       </mesh>
-      <mesh position={[0.2, -0.8, 0]}>
-        <boxGeometry args={[0.4, 1.2, 0.4]} />
+      <mesh position={[0.18, -0.8, 0]}>
+        <boxGeometry args={[0.35, 1.2, 0.35]} />
         <meshLambertMaterial color={pantsColor} />
       </mesh>
       
-      {/* Shoes - darker blue blocks */}
-      <mesh position={[-0.2, -1.5, 0.1]}>
-        <boxGeometry args={[0.5, 0.3, 0.6]} />
-        <meshLambertMaterial color="#000080" />
+      {/* Shoes - smaller and more stylish */}
+      <mesh position={[-0.18, -1.45, 0.05]}>
+        <boxGeometry args={[0.4, 0.25, 0.5]} />
+        <meshLambertMaterial color="#8B0000" />
       </mesh>
-      <mesh position={[0.2, -1.5, 0.1]}>
-        <boxGeometry args={[0.5, 0.3, 0.6]} />
-        <meshLambertMaterial color="#000080" />
+      <mesh position={[0.18, -1.45, 0.05]}>
+        <boxGeometry args={[0.4, 0.25, 0.5]} />
+        <meshLambertMaterial color="#8B0000" />
       </mesh>
     </group>
   );
