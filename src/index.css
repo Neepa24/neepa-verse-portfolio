@@ -11,28 +11,28 @@
 @layer base {
   :root {
     --background: 135 206 235; /* Sky blue */
-    --foreground: 255 255 255;
+    --foreground: 0 0 0; /* Changed to black */
 
     --card: 139 69 19; /* Dirt brown */
-    --card-foreground: 255 255 255;
+    --card-foreground: 0 0 0; /* Changed to black */
 
     --popover: 139 69 19;
-    --popover-foreground: 255 255 255;
+    --popover-foreground: 0 0 0; /* Changed to black */
 
     --primary: 92 184 92; /* Grass green */
-    --primary-foreground: 255 255 255;
+    --primary-foreground: 0 0 0; /* Changed to black */
 
     --secondary: 128 128 128; /* Stone gray */
-    --secondary-foreground: 255 255 255;
+    --secondary-foreground: 0 0 0; /* Changed to black */
 
     --muted: 101 67 33; /* Dark dirt */
-    --muted-foreground: 255 255 255;
+    --muted-foreground: 0 0 0; /* Changed to black */
 
     --accent: 255 215 0; /* Gold */
     --accent-foreground: 0 0 0;
 
     --destructive: 220 20 60; /* Redstone red */
-    --destructive-foreground: 255 255 255;
+    --destructive-foreground: 0 0 0; /* Changed to black */
 
     --border: 54 69 79; /* Dark stone */
     --input: 139 69 19;
@@ -41,11 +41,11 @@
     --radius: 0rem; /* Square corners for Minecraft look */
 
     --sidebar-background: 101 67 33;
-    --sidebar-foreground: 255 255 255;
+    --sidebar-foreground: 0 0 0; /* Changed to black */
     --sidebar-primary: 92 184 92;
-    --sidebar-primary-foreground: 255 255 255;
+    --sidebar-primary-foreground: 0 0 0; /* Changed to black */
     --sidebar-accent: 139 69 19;
-    --sidebar-accent-foreground: 255 255 255;
+    --sidebar-accent-foreground: 0 0 0; /* Changed to black */
     --sidebar-border: 54 69 79;
     --sidebar-ring: 92 184 92;
   }
@@ -57,7 +57,7 @@
   }
 
   body {
-    @apply bg-minecraft-sky text-white font-minecraft;
+    @apply bg-minecraft-sky text-black font-minecraft; /* Changed text-white to text-black */
     background: linear-gradient(to bottom, #87CEEB 0%, #4682B4 50%, #191970 100%);
     min-height: 100vh;
     image-rendering: pixelated;
@@ -152,7 +152,7 @@
 
   /* Interactive button */
   .minecraft-btn {
-    @apply relative px-6 py-3 bg-minecraft-grass text-white font-bold border-4 border-solid transition-all duration-150;
+    @apply relative px-6 py-3 bg-minecraft-grass text-black font-bold border-4 border-solid transition-all duration-150; /* Changed text-white to text-black */
     border-color: rgba(255, 255, 255, 0.4) rgba(0, 0, 0, 0.4) rgba(0, 0, 0, 0.4) rgba(255, 255, 255, 0.4);
     font-family: 'Press Start 2P', monospace;
     font-size: 10px;
@@ -199,7 +199,7 @@
     font-family: 'Press Start 2P', monospace;
     text-rendering: optimizeSpeed;
     image-rendering: pixelated;
-    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.8);
+    text-shadow: 2px 2px 0 rgba(255, 255, 255, 0.8); /* Changed shadow to white for better contrast with black text */
   }
 
   /* Floating animation */

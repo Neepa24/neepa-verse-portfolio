@@ -1,3 +1,4 @@
+
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import Avatar3D from '../components/Avatar3D';
@@ -29,7 +30,7 @@ const Index = () => {
               transition={{ duration: 1, ease: "easeOut" }}
             >
               <motion.h1 
-                className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 pixel-text text-white"
+                className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 pixel-text text-black"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, delay: 0.2 }}
@@ -48,7 +49,7 @@ const Index = () => {
               </motion.div>
               
               <motion.p
-                className="text-sm text-white mb-8 max-w-2xl leading-relaxed"
+                className="text-sm text-black mb-8 max-w-2xl leading-relaxed"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.8 }}
@@ -119,10 +120,10 @@ const Index = () => {
                   <Link to={item.path}>
                     <div className={`${item.blockType} p-6 text-center block-hover transition-all duration-300`}>
                       <div className="text-2xl mb-3">{item.icon}</div>
-                      <h3 className="text-lg font-bold text-white mb-2 pixel-text">
+                      <h3 className="text-lg font-bold text-black mb-2 pixel-text">
                         {item.title}
                       </h3>
-                      <p className="text-white text-xs opacity-80">{item.description}</p>
+                      <p className="text-black text-xs opacity-80">{item.description}</p>
                     </div>
                   </Link>
                 </motion.div>
