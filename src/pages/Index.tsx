@@ -1,9 +1,8 @@
-
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import Avatar3D from '../components/Avatar3D';
 import PageTransition from '../components/PageTransition';
-import { Blocks, Cube } from 'lucide-react';
+import { Blocks, Box } from 'lucide-react';
 
 const Index = () => {
   return (
@@ -69,7 +68,7 @@ const Index = () => {
                   View Builds
                 </Link>
                 <Link to="/contact" className="minecraft-btn bg-minecraft-redstone hover:bg-red-600">
-                  <Cube className="w-4 h-4 inline mr-2" />
+                  <Box className="w-4 h-4 inline mr-2" />
                   Connect
                 </Link>
               </motion.div>
