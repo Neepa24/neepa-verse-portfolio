@@ -1,12 +1,13 @@
 
 import { useRef, useState } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
-import { OrbitControls, Sphere, Box, Cone } from '@react-three/drei';
+import { OrbitControls } from '@react-three/drei';
 import { motion } from 'framer-motion';
+import * as THREE from 'three';
 
 // Simple 3D Avatar Component (cartoon style)
 function CartoonAvatar({ position = [0, 0, 0], scale = 1, animationType = 'idle' }) {
-  const groupRef = useRef();
+  const groupRef = useRef<THREE.Group>(null);
   const [hovered, setHovered] = useState(false);
 
   useFrame((state) => {
@@ -35,46 +36,56 @@ function CartoonAvatar({ position = [0, 0, 0], scale = 1, animationType = 'idle'
       onPointerOut={() => setHovered(false)}
     >
       {/* Head */}
-      <Sphere args={[0.5, 32, 32]} position={[0, 1, 0]}>
+      <mesh position={[0, 1, 0]}>
+        <sphereGeometry args={[0.5, 32, 32]} />
         <meshPhongMaterial color={hovered ? "#00f5ff" : "#8b5cf6"} />
-      </Sphere>
+      </mesh>
       
       {/* Eyes */}
-      <Sphere args={[0.08, 16, 16]} position={[-0.15, 1.1, 0.4]}>
+      <mesh position={[-0.15, 1.1, 0.4]}>
+        <sphereGeometry args={[0.08, 16, 16]} />
         <meshPhongMaterial color="#ffffff" />
-      </Sphere>
-      <Sphere args={[0.08, 16, 16]} position={[0.15, 1.1, 0.4]}>
+      </mesh>
+      <mesh position={[0.15, 1.1, 0.4]}>
+        <sphereGeometry args={[0.08, 16, 16]} />
         <meshPhongMaterial color="#ffffff" />
-      </Sphere>
+      </mesh>
       
       {/* Pupils */}
-      <Sphere args={[0.04, 16, 16]} position={[-0.15, 1.1, 0.45]}>
+      <mesh position={[-0.15, 1.1, 0.45]}>
+        <sphereGeometry args={[0.04, 16, 16]} />
         <meshPhongMaterial color="#000000" />
-      </Sphere>
-      <Sphere args={[0.04, 16, 16]} position={[0.15, 1.1, 0.45]}>
+      </mesh>
+      <mesh position={[0.15, 1.1, 0.45]}>
+        <sphereGeometry args={[0.04, 16, 16]} />
         <meshPhongMaterial color="#000000" />
-      </Sphere>
+      </mesh>
       
       {/* Body */}
-      <Box args={[0.6, 0.8, 0.3]} position={[0, 0.2, 0]}>
+      <mesh position={[0, 0.2, 0]}>
+        <boxGeometry args={[0.6, 0.8, 0.3]} />
         <meshPhongMaterial color={hovered ? "#ec4899" : "#10b981"} />
-      </Box>
+      </mesh>
       
       {/* Arms */}
-      <Box args={[0.15, 0.6, 0.15]} position={[-0.5, 0.2, 0]}>
+      <mesh position={[-0.5, 0.2, 0]}>
+        <boxGeometry args={[0.15, 0.6, 0.15]} />
         <meshPhongMaterial color={hovered ? "#ec4899" : "#10b981"} />
-      </Box>
-      <Box args={[0.15, 0.6, 0.15]} position={[0.5, 0.2, 0]}>
+      </mesh>
+      <mesh position={[0.5, 0.2, 0]}>
+        <boxGeometry args={[0.15, 0.6, 0.15]} />
         <meshPhongMaterial color={hovered ? "#ec4899" : "#10b981"} />
-      </Box>
+      </mesh>
       
       {/* Legs */}
-      <Box args={[0.2, 0.6, 0.2]} position={[-0.15, -0.5, 0]}>
+      <mesh position={[-0.15, -0.5, 0]}>
+        <boxGeometry args={[0.2, 0.6, 0.2]} />
         <meshPhongMaterial color="#3b82f6" />
-      </Box>
-      <Box args={[0.2, 0.6, 0.2]} position={[0.15, -0.5, 0]}>
+      </mesh>
+      <mesh position={[0.15, -0.5, 0]}>
+        <boxGeometry args={[0.2, 0.6, 0.2]} />
         <meshPhongMaterial color="#3b82f6" />
-      </Box>
+      </mesh>
     </group>
   );
 }
