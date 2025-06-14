@@ -34,8 +34,8 @@ const Contact = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-5xl md:text-6xl font-bold gradient-text mb-6">Contact</h1>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            <h1 className="text-5xl md:text-6xl font-bold text-black mb-6 pixel-text">Contact</h1>
+            <p className="text-2xl text-black max-w-3xl mx-auto pixel-text">
               Let's create something amazing together. Drop me a message!
             </p>
           </motion.div>
@@ -47,8 +47,8 @@ const Contact = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <div className="glass-card p-8">
-                <h2 className="text-3xl font-bold text-neon-cyan mb-8">Contact Form</h2>
+              <div className="grass-block p-8">
+                <h2 className="text-4xl font-bold text-black mb-8 pixel-text">Contact Form</h2>
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-4">
                     <div>
@@ -57,7 +57,7 @@ const Contact = () => {
                         name="fullname"
                         value={formData.fullname}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 bg-white/5 border border-neon-cyan/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-neon-cyan focus:ring-1 focus:ring-neon-cyan"
+                        className="w-full px-4 py-3 bg-white border-4 border-black text-black text-lg pixel-text placeholder-gray-600 focus:outline-none focus:border-minecraft-emerald"
                         placeholder="Full name"
                         required
                       />
@@ -69,7 +69,7 @@ const Contact = () => {
                         name="email"
                         value={formData.email}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 bg-white/5 border border-neon-cyan/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-neon-cyan focus:ring-1 focus:ring-neon-cyan"
+                        className="w-full px-4 py-3 bg-white border-4 border-black text-black text-lg pixel-text placeholder-gray-600 focus:outline-none focus:border-minecraft-emerald"
                         placeholder="Email Address"
                         required
                       />
@@ -82,7 +82,7 @@ const Contact = () => {
                       value={formData.message}
                       onChange={handleChange}
                       rows={6}
-                      className="w-full px-4 py-3 bg-white/5 border border-neon-cyan/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-neon-cyan focus:ring-1 focus:ring-neon-cyan resize-none"
+                      className="w-full px-4 py-3 bg-white border-4 border-black text-black text-lg pixel-text placeholder-gray-600 focus:outline-none focus:border-minecraft-emerald resize-none"
                       placeholder="Your Message"
                       required
                     />
@@ -90,16 +90,16 @@ const Contact = () => {
                   
                   <button
                     type="submit"
-                    className="w-full futuristic-btn py-4 text-lg flex items-center justify-center space-x-2"
+                    className="w-full minecraft-btn py-4 text-xl flex items-center justify-center space-x-2"
                   >
-                    <span>✈️</span>
+                    <span>✉️</span>
                     <span>Send Message</span>
                   </button>
                 </form>
               </div>
             </motion.div>
 
-            {/* Map and Avatar */}
+            {/* Avatar, Map and Contact Info */}
             <motion.div
               className="space-y-8"
               initial={{ opacity: 0, x: 50 }}
@@ -115,42 +115,44 @@ const Contact = () => {
                 />
               </div>
 
-              {/* Map */}
-              <div className="glass-card p-6">
-                <h3 className="text-2xl font-bold text-neon-purple mb-6">Location</h3>
-                <div className="rounded-lg overflow-hidden">
-                  <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d199666.5651251294!2d-121.58334177520186!3d38.56165006739519!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x809ac672b28397f9%3A0x921f6aaa74197fdb!2sSacramento%2C%20CA%2C%20USA!5e0!3m2!1sen!2sbd!4v1647608789441!5m2!1sen!2sbd"
-                    width="100%" 
-                    height="300" 
-                    style={{ border: 0 }}
-                    allowFullScreen 
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                    className="rounded-lg"
-                  />
+              {/* Map and Contact Info Side by Side */}
+              <div className="grid md:grid-cols-2 gap-6">
+                {/* Map */}
+                <div className="dirt-block p-6">
+                  <h3 className="text-3xl font-bold text-black mb-6 pixel-text">Location</h3>
+                  <div className="overflow-hidden border-4 border-black">
+                    <iframe 
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d199666.5651251294!2d-121.58334177520186!3d38.56165006739519!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x809ac672b28397f9%3A0x921f6aaa74197fdb!2sSacramento%2C%20CA%2C%20USA!5e0!3m2!1sen!2sbd!4v1647608789441!5m2!1sen!2sbd"
+                      width="100%" 
+                      height="300" 
+                      style={{ border: 0 }}
+                      allowFullScreen 
+                      loading="lazy"
+                      referrerPolicy="no-referrer-when-downgrade"
+                    />
+                  </div>
                 </div>
-              </div>
 
-              {/* Contact Info */}
-              <div className="glass-card p-6">
-                <h3 className="text-2xl font-bold text-neon-pink mb-6">Contact Info</h3>
-                <div className="space-y-4">
-                  <div className="flex items-center space-x-3">
-                    <div className="w-2 h-2 bg-neon-cyan rounded-full"></div>
-                    <span className="text-gray-300">hello@neepa.dev</span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <div className="w-2 h-2 bg-neon-purple rounded-full"></div>
-                    <span className="text-gray-300">+1 (213) 352-2795</span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <div className="w-2 h-2 bg-neon-pink rounded-full"></div>
-                    <span className="text-gray-300">Sacramento, California, USA</span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <div className="w-2 h-2 bg-neon-green rounded-full"></div>
-                    <span className="text-gray-300">Available for freelance work</span>
+                {/* Contact Info */}
+                <div className="stone-block p-6">
+                  <h3 className="text-3xl font-bold text-black mb-6 pixel-text">Contact Info</h3>
+                  <div className="space-y-6">
+                    <div className="flex items-center space-x-3">
+                      <div className="w-4 h-4 bg-minecraft-emerald border-2 border-black"></div>
+                      <span className="text-black text-xl pixel-text">hello@neepa.dev</span>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <div className="w-4 h-4 bg-minecraft-gold border-2 border-black"></div>
+                      <span className="text-black text-xl pixel-text">+1 (213) 352-2795</span>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <div className="w-4 h-4 bg-minecraft-redstone border-2 border-black"></div>
+                      <span className="text-black text-xl pixel-text">Sacramento, California, USA</span>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <div className="w-4 h-4 bg-minecraft-diamond border-2 border-black"></div>
+                      <span className="text-black text-xl pixel-text">Available for freelance work</span>
+                    </div>
                   </div>
                 </div>
               </div>
