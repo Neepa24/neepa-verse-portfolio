@@ -70,7 +70,7 @@ const About = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-5xl md:text-6xl font-bold gradient-text mb-6">About Me</h1>
+            <h1 className="text-5xl md:text-6xl font-bold gradient-text mb-6 text-black">About Me</h1>
           </motion.div>
 
           <div className="grid lg:grid-cols-3 gap-12">
@@ -91,15 +91,15 @@ const About = () => {
 
               {/* Contact Info Card */}
               <div className="glass-card p-6 mb-8">
-                <h3 className="text-xl font-bold text-neon-cyan mb-4">Contact Info</h3>
+                <h3 className="text-xl font-bold text-black mb-4">Contact Info</h3>
                 <div className="space-y-4">
                   <div className="flex items-center space-x-3">
                     <div className="w-8 h-8 bg-neon-cyan/20 rounded-lg flex items-center justify-center">
                       <span className="text-neon-cyan text-sm">✉</span>
                     </div>
                     <div>
-                      <p className="text-xs text-gray-400">Email</p>
-                      <p className="text-white">hello@neepa.dev</p>
+                      <p className="text-xs text-black">Email</p>
+                      <p className="text-black">hello@neepa.dev</p>
                     </div>
                   </div>
                   <div className="flex items-center space-x-3">
@@ -107,8 +107,8 @@ const About = () => {
                       <span className="text-neon-purple text-sm">📱</span>
                     </div>
                     <div>
-                      <p className="text-xs text-gray-400">Phone</p>
-                      <p className="text-white">+1 (213) 352-2795</p>
+                      <p className="text-xs text-black">Phone</p>
+                      <p className="text-black">+1 (213) 352-2795</p>
                     </div>
                   </div>
                   <div className="flex items-center space-x-3">
@@ -116,8 +116,8 @@ const About = () => {
                       <span className="text-neon-pink text-sm">📍</span>
                     </div>
                     <div>
-                      <p className="text-xs text-gray-400">Location</p>
-                      <p className="text-white">Sacramento, California, USA</p>
+                      <p className="text-xs text-black">Location</p>
+                      <p className="text-black">Sacramento, California, USA</p>
                     </div>
                   </div>
                 </div>
@@ -133,17 +133,17 @@ const About = () => {
             >
               {/* About Text */}
               <div className="glass-card p-8">
-                <p className="text-gray-300 mb-4 leading-relaxed">
+                <p className="text-black mb-4 leading-relaxed">
                   I'm a Creative Frontend Developer and UI/UX Designer from California, working in web development and modern technologies. I enjoy turning complex problems into simple, beautiful and intuitive digital experiences.
                 </p>
-                <p className="text-gray-300 leading-relaxed">
+                <p className="text-black leading-relaxed">
                   My job is to build your website so that it is functional and user-friendly but at the same time attractive. Moreover, I add personal touch to your product and make sure that it is eye-catching and easy to use. My aim is to bring across your message and identity in the most creative way.
                 </p>
               </div>
 
               {/* Services */}
               <div className="glass-card p-8">
-                <h3 className="text-3xl font-bold text-neon-cyan mb-8">What I'm doing</h3>
+                <h3 className="text-3xl font-bold text-black mb-8">What I'm doing</h3>
                 <div className="grid md:grid-cols-2 gap-6">
                   {services.map((service, index) => (
                     <motion.div
@@ -155,8 +155,8 @@ const About = () => {
                     >
                       <img src={service.icon} alt={service.title} className="w-10 h-10" />
                       <div>
-                        <h4 className="font-bold text-white mb-2">{service.title}</h4>
-                        <p className="text-sm text-gray-300">{service.description}</p>
+                        <h4 className="font-bold text-black mb-2">{service.title}</h4>
+                        <p className="text-sm text-black">{service.description}</p>
                       </div>
                     </motion.div>
                   ))}
@@ -165,7 +165,7 @@ const About = () => {
 
               {/* Testimonials */}
               <div className="glass-card p-8">
-                <h3 className="text-3xl font-bold text-neon-purple mb-8">Testimonials</h3>
+                <h3 className="text-3xl font-bold text-black mb-8">Testimonials</h3>
                 <div className="grid md:grid-cols-2 gap-6">
                   {testimonials.map((testimonial, index) => (
                     <motion.div
@@ -181,9 +181,9 @@ const About = () => {
                           alt={testimonial.name}
                           className="w-12 h-12 rounded-full mr-4"
                         />
-                        <h4 className="font-bold text-white">{testimonial.name}</h4>
+                        <h4 className="font-bold text-black">{testimonial.name}</h4>
                       </div>
-                      <p className="text-sm text-gray-300 leading-relaxed">{testimonial.text}</p>
+                      <p className="text-sm text-black leading-relaxed">{testimonial.text}</p>
                     </motion.div>
                   ))}
                 </div>
@@ -191,7 +191,7 @@ const About = () => {
 
               {/* Clients */}
               <div className="glass-card p-8">
-                <h3 className="text-3xl font-bold text-neon-pink mb-8">Clients</h3>
+                <h3 className="text-3xl font-bold text-black mb-8">Clients</h3>
                 <div className="grid grid-cols-3 md:grid-cols-6 gap-4">
                   {clients.map((client, index) => (
                     <motion.div
