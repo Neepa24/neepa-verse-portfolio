@@ -63,13 +63,22 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Futuristic neon colors
-				neon: {
-					cyan: '#00f5ff',
-					purple: '#8b5cf6',
-					pink: '#ec4899',
-					green: '#10b981',
-					blue: '#3b82f6'
+				// Minecraft-themed colors
+				minecraft: {
+					grass: '#5CB85C',
+					dirt: '#8B4513',
+					stone: '#808080',
+					wood: '#DEB887',
+					diamond: '#00CED1',
+					emerald: '#50C878',
+					gold: '#FFD700',
+					redstone: '#DC143C',
+					lapis: '#4169E1',
+					coal: '#36454F',
+					iron: '#C0C0C0',
+					creeper: '#00AA00',
+					sky: '#87CEEB',
+					night: '#191970'
 				}
 			},
 			borderRadius: {
@@ -104,35 +113,45 @@ export default {
 						transform: 'translateY(0)'
 					}
 				},
-				'glow-pulse': {
+				'minecraft-bounce': {
 					'0%, 100%': {
-						boxShadow: '0 0 20px rgba(0, 245, 255, 0.5)'
+						transform: 'translateY(0px) scale(1)'
 					},
 					'50%': {
-						boxShadow: '0 0 40px rgba(0, 245, 255, 0.8)'
+						transform: 'translateY(-8px) scale(1.05)'
 					}
 				},
-				'typing': {
-					'0%': { width: '0' },
-					'100%': { width: '100%' }
+				'block-break': {
+					'0%': { transform: 'scale(1)' },
+					'50%': { transform: 'scale(1.1)' },
+					'100%': { transform: 'scale(1)' }
 				},
-				'float': {
-					'0%, 100%': { transform: 'translateY(0px)' },
-					'50%': { transform: 'translateY(-10px)' }
+				'pixel-pulse': {
+					'0%, 100%': {
+						boxShadow: '0 0 0 0px rgba(93, 184, 92, 0.8)'
+					},
+					'50%': {
+						boxShadow: '0 0 0 8px rgba(93, 184, 92, 0.3)'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'fade-in': 'fade-in 0.3s ease-out',
-				'glow-pulse': 'glow-pulse 2s ease-in-out infinite',
-				'typing': 'typing 3s steps(40, end)',
-				'float': 'float 3s ease-in-out infinite'
+				'minecraft-bounce': 'minecraft-bounce 2s ease-in-out infinite',
+				'block-break': 'block-break 0.3s ease-in-out',
+				'pixel-pulse': 'pixel-pulse 2s ease-in-out infinite'
 			},
 			backgroundImage: {
 				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-				'futuristic': 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-				'neon-gradient': 'linear-gradient(135deg, #00f5ff 0%, #8b5cf6 50%, #ec4899 100%)'
+				'minecraft-grass': 'linear-gradient(to bottom, #5CB85C 0%, #228B22 100%)',
+				'minecraft-dirt': 'linear-gradient(to bottom, #8B4513 0%, #654321 100%)',
+				'minecraft-stone': 'linear-gradient(to bottom, #808080 0%, #696969 100%)',
+				'minecraft-sky': 'linear-gradient(to bottom, #87CEEB 0%, #4682B4 100%)'
+			},
+			fontFamily: {
+				'minecraft': ['Courier New', 'monospace']
 			}
 		}
 	},

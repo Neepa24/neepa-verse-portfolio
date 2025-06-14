@@ -3,17 +3,19 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import Avatar3D from '../components/Avatar3D';
 import PageTransition from '../components/PageTransition';
-import { ArrowDown } from 'lucide-react';
+import { Blocks, Cube } from 'lucide-react';
 
 const Index = () => {
   return (
     <PageTransition>
-      <div className="min-h-screen relative overflow-hidden">
-        {/* Animated Background Elements */}
+      <div className="min-h-screen relative overflow-hidden bg-minecraft-sky">
+        {/* Floating Minecraft blocks */}
         <div className="absolute inset-0">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-neon-cyan/5 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-neon-purple/5 rounded-full blur-3xl animate-pulse delay-1000"></div>
-          <div className="absolute top-1/2 left-1/2 w-96 h-96 bg-neon-pink/5 rounded-full blur-3xl animate-pulse delay-2000"></div>
+          <div className="absolute top-1/4 left-1/4 w-16 h-16 grass-block minecraft-float opacity-20"></div>
+          <div className="absolute bottom-1/4 right-1/4 w-12 h-12 dirt-block minecraft-float opacity-30" style={{ animationDelay: '1s' }}></div>
+          <div className="absolute top-1/2 left-1/2 w-20 h-20 stone-block minecraft-float opacity-15" style={{ animationDelay: '2s' }}></div>
+          <div className="absolute top-3/4 left-1/8 w-14 h-14 wood-block minecraft-float opacity-25" style={{ animationDelay: '0.5s' }}></div>
+          <div className="absolute bottom-1/8 right-1/8 w-10 h-10 diamond-block minecraft-float opacity-40" style={{ animationDelay: '1.5s' }}></div>
         </div>
 
         {/* Hero Section */}
@@ -28,34 +30,32 @@ const Index = () => {
               transition={{ duration: 1, ease: "easeOut" }}
             >
               <motion.h1 
-                className="text-6xl md:text-7xl lg:text-8xl font-bold leading-tight mb-6"
+                className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 pixel-text text-white"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, delay: 0.2 }}
               >
                 Hi, I'm{' '}
-                <span className="gradient-text">Neepa</span>
+                <span className="text-minecraft-emerald">Neepa</span>
               </motion.h1>
               
               <motion.div
-                className="text-2xl md:text-3xl text-gray-300 mb-8 h-20"
+                className="text-lg md:text-xl text-minecraft-gold mb-8 pixel-text"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1, delay: 0.5 }}
               >
-                <div className="typing-animation">
-                  Frontend Developer, UI Enthusiast, Tech Explorer
-                </div>
+                Minecraft Builder & Web Crafter
               </motion.div>
               
               <motion.p
-                className="text-lg text-gray-400 mb-8 max-w-2xl"
+                className="text-sm text-white mb-8 max-w-2xl leading-relaxed"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.8 }}
               >
-                I create beautiful, interactive web experiences that combine cutting-edge technology 
-                with intuitive design. Let's build something amazing together.
+                I craft digital worlds with the precision of a Minecraft builder. 
+                Building blocks of code into amazing experiences, one pixel at a time.
               </motion.p>
               
               <motion.div
@@ -64,11 +64,13 @@ const Index = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 1 }}
               >
-                <Link to="/projects" className="futuristic-btn text-lg">
-                  View My Work
+                <Link to="/projects" className="minecraft-btn">
+                  <Blocks className="w-4 h-4 inline mr-2" />
+                  View Builds
                 </Link>
-                <Link to="/contact" className="futuristic-btn text-lg">
-                  Get In Touch
+                <Link to="/contact" className="minecraft-btn bg-minecraft-redstone hover:bg-red-600">
+                  <Cube className="w-4 h-4 inline mr-2" />
+                  Connect
                 </Link>
               </motion.div>
             </motion.div>
@@ -82,30 +84,13 @@ const Index = () => {
             >
               <Avatar3D 
                 size="large" 
-                message="Welcome to my digital world!" 
+                message="Welcome to my block world!" 
                 animationType="wave"
-                className="floating"
+                className="minecraft-float"
               />
             </motion.div>
           </div>
         </div>
-
-        {/* Scroll Indicator */}
-        <motion.div
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-neon-cyan"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 1.5 }}
-        >
-          <motion.div
-            animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 2, repeat: Infinity }}
-            className="flex flex-col items-center space-y-2"
-          >
-            <span className="text-sm">Scroll to explore</span>
-            <ArrowDown size={20} />
-          </motion.div>
-        </motion.div>
 
         {/* Quick Navigation Cards */}
         <motion.section
@@ -115,16 +100,16 @@ const Index = () => {
           transition={{ duration: 1, delay: 1.2 }}
         >
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-4xl font-bold text-center gradient-text mb-16">
+            <h2 className="text-3xl font-bold text-center pixel-text text-minecraft-gold mb-16">
               Explore My World
             </h2>
             
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {[
-                { title: 'About', path: '/about', description: 'My journey & skills', color: 'neon-cyan' },
-                { title: 'Projects', path: '/projects', description: 'Creative solutions', color: 'neon-purple' },
-                { title: 'Resume', path: '/resume', description: 'Professional experience', color: 'neon-pink' },
-                { title: 'Contact', path: '/contact', description: 'Let\'s connect', color: 'neon-green' }
+                { title: 'About', path: '/about', description: 'My story & skills', blockType: 'grass-block', icon: '👤' },
+                { title: 'Projects', path: '/projects', description: 'My builds', blockType: 'diamond-block', icon: '🏗️' },
+                { title: 'Resume', path: '/resume', description: 'Experience log', blockType: 'stone-block', icon: '📜' },
+                { title: 'Contact', path: '/contact', description: 'Join server', blockType: 'wood-block', icon: '📨' }
               ].map((item, index) => (
                 <motion.div
                   key={item.title}
@@ -133,11 +118,12 @@ const Index = () => {
                   transition={{ duration: 0.6, delay: 0.1 * index }}
                 >
                   <Link to={item.path}>
-                    <div className="glass-card p-6 text-center neon-glow-hover group">
-                      <h3 className={`text-2xl font-bold text-${item.color} mb-2 group-hover:text-white transition-colors`}>
+                    <div className={`${item.blockType} p-6 text-center block-hover transition-all duration-300`}>
+                      <div className="text-2xl mb-3">{item.icon}</div>
+                      <h3 className="text-lg font-bold text-white mb-2 pixel-text">
                         {item.title}
                       </h3>
-                      <p className="text-gray-400 text-sm">{item.description}</p>
+                      <p className="text-white text-xs opacity-80">{item.description}</p>
                     </div>
                   </Link>
                 </motion.div>
@@ -145,6 +131,24 @@ const Index = () => {
             </div>
           </div>
         </motion.section>
+
+        {/* Minecraft-style inventory bar at bottom */}
+        <motion.div
+          className="fixed bottom-4 left-1/2 transform -translate-x-1/2 z-50"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 2 }}
+        >
+          <div className="flex space-x-1">
+            {[...Array(9)].map((_, i) => (
+              <div key={i} className="inventory-slot">
+                {i === 0 && <div className="w-full h-full bg-minecraft-diamond opacity-80"></div>}
+                {i === 1 && <div className="w-full h-full bg-minecraft-emerald opacity-80"></div>}
+                {i === 2 && <div className="w-full h-full bg-minecraft-gold opacity-80"></div>}
+              </div>
+            ))}
+          </div>
+        </motion.div>
       </div>
     </PageTransition>
   );

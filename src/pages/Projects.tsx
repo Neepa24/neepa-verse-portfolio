@@ -1,8 +1,8 @@
-
 import { motion } from 'framer-motion';
 import Avatar3D from '../components/Avatar3D';
 import PageTransition from '../components/PageTransition';
 import { useState } from 'react';
+import { Blocks } from 'lucide-react';
 
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState('All');
@@ -13,8 +13,9 @@ const Projects = () => {
       title: 'Finance Dashboard',
       category: 'Web Development',
       image: 'https://i.postimg.cc/qRHpHMyd/project-1.jpg',
-      description: 'A comprehensive financial dashboard with real-time analytics and reporting features.',
+      description: 'A comprehensive financial dashboard built with blocks of code.',
       tags: ['React', 'TypeScript', 'Chart.js', 'Node.js'],
+      blockType: 'diamond-block',
       github: '#',
       live: '#'
     },
@@ -23,8 +24,9 @@ const Projects = () => {
       title: 'Orizon Platform',
       category: 'Web Development',
       image: 'https://i.postimg.cc/bNrcM2Wt/project-2.png',
-      description: 'A modern business platform with advanced user management and analytics.',
+      description: 'A modern business platform crafted pixel by pixel.',
       tags: ['Next.js', 'MongoDB', 'Tailwind CSS'],
+      blockType: 'emerald-block',
       github: '#',
       live: '#'
     },
@@ -33,8 +35,9 @@ const Projects = () => {
       title: 'Fundo Creative',
       category: 'Web Design',
       image: 'https://i.postimg.cc/jSJVqYsq/project-3.jpg',
-      description: 'Creative agency website with stunning animations and modern design.',
+      description: 'Creative agency website with blocky animations.',
       tags: ['Figma', 'Adobe XD', 'Framer Motion'],
+      blockType: 'grass-block',
       github: '#',
       live: '#'
     },
@@ -43,8 +46,9 @@ const Projects = () => {
       title: 'Brawlhalla Mobile',
       category: 'Applications',
       image: 'https://i.postimg.cc/dtpXxNGb/project-4.png',
-      description: 'Mobile companion app for the popular fighting game with real-time stats.',
+      description: 'Mobile companion app built block by block.',
       tags: ['React Native', 'Redux', 'Firebase'],
+      blockType: 'redstone-block',
       github: '#',
       live: '#'
     },
@@ -53,8 +57,9 @@ const Projects = () => {
       title: 'DSM Design System',
       category: 'Web Design',
       image: 'https://i.postimg.cc/43T0JKLw/project-5.png',
-      description: 'Comprehensive design system for enterprise applications.',
+      description: 'Comprehensive design system for digital builders.',
       tags: ['Storybook', 'React', 'Styled Components'],
+      blockType: 'stone-block',
       github: '#',
       live: '#'
     },
@@ -63,8 +68,9 @@ const Projects = () => {
       title: 'Metaspark Web3',
       category: 'Web Design',
       image: 'https://i.postimg.cc/qR1DX1kZ/project-6.png',
-      description: 'Modern Web3 platform design with blockchain integration concepts.',
+      description: 'Modern Web3 platform with blockchain blocks.',
       tags: ['Web3', 'Ethereum', 'React', 'UI/UX'],
+      blockType: 'gold-block',
       github: '#',
       live: '#'
     },
@@ -73,8 +79,9 @@ const Projects = () => {
       title: 'Summary Analytics',
       category: 'Web Development',
       image: 'https://i.postimg.cc/Kj4q9tjc/project-7.png',
-      description: 'Advanced analytics platform with machine learning insights.',
+      description: 'Advanced analytics platform with data blocks.',
       tags: ['Python', 'Django', 'React', 'D3.js'],
+      blockType: 'lapis-block',
       github: '#',
       live: '#'
     },
@@ -83,8 +90,9 @@ const Projects = () => {
       title: 'Task Manager Pro',
       category: 'Applications',
       image: 'https://i.postimg.cc/rw2j4B1w/project-8.jpg',
-      description: 'Collaborative task management application with team features.',
+      description: 'Collaborative task management built with precision.',
       tags: ['Vue.js', 'Node.js', 'Socket.io'],
+      blockType: 'iron-block',
       github: '#',
       live: '#'
     },
@@ -93,8 +101,9 @@ const Projects = () => {
       title: 'Arrival Logistics',
       category: 'Web Development',
       image: 'https://i.postimg.cc/7LxNsSQv/project-9.png',
-      description: 'Logistics management system with real-time tracking and analytics.',
+      description: 'Logistics management system with tracking blocks.',
       tags: ['Angular', 'Express', 'PostgreSQL'],
+      blockType: 'coal-block',
       github: '#',
       live: '#'
     }
@@ -106,9 +115,24 @@ const Projects = () => {
     ? projects 
     : projects.filter(project => project.category === activeFilter);
 
+  const getBlockClass = (blockType: string) => {
+    const blockClasses: { [key: string]: string } = {
+      'diamond-block': 'bg-minecraft-diamond',
+      'emerald-block': 'bg-minecraft-emerald',
+      'grass-block': 'bg-minecraft-grass',
+      'redstone-block': 'bg-minecraft-redstone',
+      'stone-block': 'bg-minecraft-stone',
+      'gold-block': 'bg-minecraft-gold',
+      'lapis-block': 'bg-minecraft-lapis',
+      'iron-block': 'bg-minecraft-iron',
+      'coal-block': 'bg-minecraft-coal'
+    };
+    return `minecraft-block ${blockClasses[blockType] || 'bg-minecraft-stone'}`;
+  };
+
   return (
     <PageTransition>
-      <div className="min-h-screen pt-24 px-6">
+      <div className="min-h-screen pt-24 px-6 bg-minecraft-sky">
         <div className="max-w-7xl mx-auto">
           {/* Header */}
           <motion.div 
@@ -117,9 +141,12 @@ const Projects = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-5xl md:text-6xl font-bold gradient-text mb-6">Portfolio</h1>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              A showcase of my latest work and creative solutions
+            <h1 className="text-4xl md:text-5xl font-bold pixel-text text-minecraft-gold mb-6">
+              <Blocks className="w-12 h-12 inline mr-4" />
+              My Builds
+            </h1>
+            <p className="text-white max-w-3xl mx-auto">
+              A showcase of my digital constructions and creative builds
             </p>
           </motion.div>
 
@@ -134,10 +161,10 @@ const Projects = () => {
               <button
                 key={category}
                 onClick={() => setActiveFilter(category)}
-                className={`px-6 py-3 rounded-lg font-medium transition-all duration-300 ${
+                className={`minecraft-btn ${
                   activeFilter === category
-                    ? 'bg-gradient-to-r from-neon-cyan to-neon-purple text-white'
-                    : 'bg-white/5 text-gray-300 hover:bg-white/10 hover:text-white'
+                    ? 'bg-minecraft-emerald'
+                    : 'bg-minecraft-dirt hover:bg-minecraft-stone'
                 }`}
               >
                 {category}
@@ -155,7 +182,7 @@ const Projects = () => {
             {filteredProjects.map((project, index) => (
               <motion.div
                 key={project.id}
-                className="glass-card overflow-hidden neon-glow-hover group cursor-pointer"
+                className={`${getBlockClass(project.blockType)} overflow-hidden block-hover cursor-pointer`}
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.1 * index }}
@@ -165,28 +192,30 @@ const Projects = () => {
                   <img 
                     src={project.image} 
                     alt={project.title}
-                    className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
+                    className="w-full h-48 object-cover"
+                    style={{ imageRendering: 'pixelated' }}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div className="w-12 h-12 bg-neon-cyan/20 rounded-full flex items-center justify-center backdrop-blur-sm">
-                      <span className="text-neon-cyan text-xl">👁</span>
+                  <div className="absolute inset-0 bg-black/40" />
+                  <div className="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
+                    <div className="w-16 h-16 inventory-slot flex items-center justify-center">
+                      <Blocks className="w-8 h-8 text-white" />
                     </div>
                   </div>
                 </div>
                 
                 <div className="p-6">
-                  <h3 className="text-xl font-bold text-white mb-2 group-hover:text-neon-cyan transition-colors">
+                  <h3 className="text-lg font-bold text-white mb-2 pixel-text">
                     {project.title}
                   </h3>
-                  <p className="text-neon-purple text-sm mb-3">{project.category}</p>
-                  <p className="text-gray-300 text-sm mb-4">{project.description}</p>
+                  <p className="text-minecraft-gold text-xs mb-3 pixel-text">{project.category}</p>
+                  <p className="text-white text-xs mb-4">{project.description}</p>
                   
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-1">
                     {project.tags.slice(0, 3).map((tag) => (
                       <span 
                         key={tag}
-                        className="px-2 py-1 bg-neon-cyan/10 border border-neon-cyan/20 rounded text-xs text-neon-cyan"
+                        className="px-2 py-1 inventory-slot text-xs text-white pixel-text"
+                        style={{ width: 'auto', height: 'auto', minWidth: '40px' }}
                       >
                         {tag}
                       </span>
@@ -206,7 +235,7 @@ const Projects = () => {
           >
             <Avatar3D 
               size="small" 
-              message="Click any project to learn more!"
+              message="Check out my builds!"
               animationType="point"
             />
           </motion.div>
