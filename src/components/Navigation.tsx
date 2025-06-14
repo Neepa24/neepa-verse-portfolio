@@ -1,8 +1,7 @@
-
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, Home, Contact, FileText, Code, BookOpen } from 'lucide-react';
+import { Menu, Home, Contact, FileText, Code } from 'lucide-react';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,7 +13,6 @@ const Navigation = () => {
     { name: 'Projects', path: '/projects', icon: Code },
     { name: 'Resume', path: '/resume', icon: FileText },
     { name: 'Contact', path: '/contact', icon: Contact },
-    { name: 'Blog', path: '/blog', icon: BookOpen },
   ];
 
   return (
