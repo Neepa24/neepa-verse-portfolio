@@ -59,8 +59,8 @@ const Resume = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-5xl md:text-6xl font-bold gradient-text mb-6">Resume</h1>
-            <p className="text-xl text-gray-300">
+            <h1 className="text-6xl md:text-7xl font-bold gradient-text mb-8 text-black">Resume</h1>
+            <p className="text-2xl text-black">
               My professional journey and expertise
             </p>
           </motion.div>
@@ -82,8 +82,8 @@ const Resume = () => {
               </div>
 
               <div className="glass-card p-8 text-center">
-                <h3 className="text-xl font-bold text-neon-cyan mb-4">Download Resume</h3>
-                <button className="futuristic-btn w-full">
+                <h3 className="text-2xl font-bold text-neon-cyan mb-6">Download Resume</h3>
+                <button className="futuristic-btn w-full text-lg py-4">
                   Download PDF
                 </button>
               </div>
@@ -98,26 +98,26 @@ const Resume = () => {
             >
               {/* Education */}
               <div className="glass-card p-8">
-                <div className="flex items-center mb-8">
-                  <div className="w-10 h-10 bg-neon-cyan/20 rounded-lg flex items-center justify-center mr-4">
-                    <span className="text-neon-cyan">🎓</span>
+                <div className="flex items-center mb-10">
+                  <div className="w-12 h-12 bg-neon-cyan/20 rounded-lg flex items-center justify-center mr-4">
+                    <span className="text-neon-cyan text-xl">🎓</span>
                   </div>
-                  <h3 className="text-3xl font-bold text-neon-cyan">Education</h3>
+                  <h3 className="text-4xl font-bold text-neon-cyan">Education</h3>
                 </div>
 
-                <div className="space-y-8">
+                <div className="space-y-10">
                   {education.map((item, index) => (
                     <motion.div
                       key={item.title}
-                      className="border-l-2 border-neon-cyan/30 pl-6 relative"
+                      className="border-l-2 border-neon-cyan/30 pl-8 relative"
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.5, delay: 0.1 * index }}
                     >
-                      <div className="absolute w-3 h-3 bg-neon-cyan rounded-full -left-2 top-0"></div>
-                      <h4 className="text-xl font-bold text-white mb-2">{item.title}</h4>
-                      <span className="text-neon-cyan text-sm font-medium">{item.period}</span>
-                      <p className="text-gray-300 mt-3 leading-relaxed">{item.description}</p>
+                      <div className="absolute w-4 h-4 bg-neon-cyan rounded-full -left-2 top-0"></div>
+                      <h4 className="text-2xl font-bold text-black mb-3">{item.title}</h4>
+                      <span className="text-neon-cyan text-lg font-medium">{item.period}</span>
+                      <p className="text-black mt-4 leading-relaxed text-lg">{item.description}</p>
                     </motion.div>
                   ))}
                 </div>
@@ -125,26 +125,26 @@ const Resume = () => {
 
               {/* Experience */}
               <div className="glass-card p-8">
-                <div className="flex items-center mb-8">
-                  <div className="w-10 h-10 bg-neon-purple/20 rounded-lg flex items-center justify-center mr-4">
-                    <span className="text-neon-purple">💼</span>
+                <div className="flex items-center mb-10">
+                  <div className="w-12 h-12 bg-neon-purple/20 rounded-lg flex items-center justify-center mr-4">
+                    <span className="text-neon-purple text-xl">💼</span>
                   </div>
-                  <h3 className="text-3xl font-bold text-neon-purple">Experience</h3>
+                  <h3 className="text-4xl font-bold text-neon-purple">Experience</h3>
                 </div>
 
-                <div className="space-y-8">
+                <div className="space-y-10">
                   {experience.map((item, index) => (
                     <motion.div
                       key={item.title}
-                      className="border-l-2 border-neon-purple/30 pl-6 relative"
+                      className="border-l-2 border-neon-purple/30 pl-8 relative"
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.5, delay: 0.1 * index }}
                     >
-                      <div className="absolute w-3 h-3 bg-neon-purple rounded-full -left-2 top-0"></div>
-                      <h4 className="text-xl font-bold text-white mb-2">{item.title}</h4>
-                      <span className="text-neon-purple text-sm font-medium">{item.period}</span>
-                      <p className="text-gray-300 mt-3 leading-relaxed">{item.description}</p>
+                      <div className="absolute w-4 h-4 bg-neon-purple rounded-full -left-2 top-0"></div>
+                      <h4 className="text-2xl font-bold text-black mb-3">{item.title}</h4>
+                      <span className="text-neon-purple text-lg font-medium">{item.period}</span>
+                      <p className="text-black mt-4 leading-relaxed text-lg">{item.description}</p>
                     </motion.div>
                   ))}
                 </div>
@@ -152,14 +152,14 @@ const Resume = () => {
 
               {/* Skills */}
               <div className="glass-card p-8">
-                <div className="flex items-center mb-8">
-                  <div className="w-10 h-10 bg-neon-pink/20 rounded-lg flex items-center justify-center mr-4">
-                    <span className="text-neon-pink">⚡</span>
+                <div className="flex items-center mb-10">
+                  <div className="w-12 h-12 bg-neon-pink/20 rounded-lg flex items-center justify-center mr-4">
+                    <span className="text-neon-pink text-xl">⚡</span>
                   </div>
-                  <h3 className="text-3xl font-bold text-neon-pink">My Skills</h3>
+                  <h3 className="text-4xl font-bold text-neon-pink">My Skills</h3>
                 </div>
 
-                <div className="space-y-6">
+                <div className="space-y-8">
                   {skills.map((skill, index) => (
                     <motion.div
                       key={skill.name}
@@ -167,13 +167,13 @@ const Resume = () => {
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.5, delay: 0.1 * index }}
                     >
-                      <div className="flex justify-between items-center mb-2">
-                        <h5 className="text-white font-medium">{skill.name}</h5>
-                        <span className="text-neon-cyan text-sm">{skill.percentage}%</span>
+                      <div className="flex justify-between items-center mb-3">
+                        <h5 className="text-black font-medium text-xl">{skill.name}</h5>
+                        <span className="text-neon-cyan text-lg">{skill.percentage}%</span>
                       </div>
-                      <div className="w-full bg-gray-700 rounded-full h-2">
+                      <div className="w-full bg-gray-700 rounded-full h-3">
                         <motion.div 
-                          className="bg-gradient-to-r from-neon-cyan to-neon-purple h-2 rounded-full"
+                          className="bg-gradient-to-r from-neon-cyan to-neon-purple h-3 rounded-full"
                           initial={{ width: 0 }}
                           animate={{ width: `${skill.percentage}%` }}
                           transition={{ duration: 1, delay: 0.5 + (0.1 * index) }}

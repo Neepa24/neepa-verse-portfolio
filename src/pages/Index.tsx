@@ -30,7 +30,7 @@ const Index = () => {
               transition={{ duration: 1, ease: "easeOut" }}
             >
               <motion.h1 
-                className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 pixel-text text-black"
+                className="text-6xl md:text-7xl lg:text-8xl font-bold leading-tight mb-8 pixel-text text-black"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, delay: 0.2 }}
@@ -40,7 +40,7 @@ const Index = () => {
               </motion.h1>
               
               <motion.div
-                className="text-lg md:text-xl text-minecraft-gold mb-8 pixel-text"
+                className="text-2xl md:text-3xl text-minecraft-gold mb-10 pixel-text"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1, delay: 0.5 }}
@@ -49,7 +49,7 @@ const Index = () => {
               </motion.div>
               
               <motion.p
-                className="text-sm text-black mb-8 max-w-2xl leading-relaxed"
+                className="text-lg text-black mb-10 max-w-2xl leading-relaxed"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.8 }}
@@ -64,12 +64,12 @@ const Index = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 1 }}
               >
-                <Link to="/projects" className="minecraft-btn">
-                  <Blocks className="w-4 h-4 inline mr-2" />
+                <Link to="/projects" className="minecraft-btn text-lg px-8 py-4">
+                  <Blocks className="w-6 h-6 inline mr-2" />
                   View Builds
                 </Link>
-                <Link to="/contact" className="minecraft-btn bg-minecraft-redstone hover:bg-red-600">
-                  <Box className="w-4 h-4 inline mr-2" />
+                <Link to="/contact" className="minecraft-btn bg-minecraft-redstone hover:bg-red-600 text-lg px-8 py-4">
+                  <Box className="w-6 h-6 inline mr-2" />
                   Connect
                 </Link>
               </motion.div>
@@ -100,7 +100,7 @@ const Index = () => {
           transition={{ duration: 1, delay: 1.2 }}
         >
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl font-bold text-center pixel-text text-minecraft-gold mb-16">
+            <h2 className="text-4xl font-bold text-center pixel-text text-minecraft-gold mb-16">
               Explore My World
             </h2>
             
@@ -119,11 +119,11 @@ const Index = () => {
                 >
                   <Link to={item.path}>
                     <div className={`${item.blockType} p-6 text-center block-hover transition-all duration-300`}>
-                      <div className="text-2xl mb-3">{item.icon}</div>
-                      <h3 className="text-lg font-bold text-black mb-2 pixel-text">
+                      <div className="text-3xl mb-4">{item.icon}</div>
+                      <h3 className="text-xl font-bold text-black mb-3 pixel-text">
                         {item.title}
                       </h3>
-                      <p className="text-black text-xs opacity-80">{item.description}</p>
+                      <p className="text-black text-base opacity-80">{item.description}</p>
                     </div>
                   </Link>
                 </motion.div>

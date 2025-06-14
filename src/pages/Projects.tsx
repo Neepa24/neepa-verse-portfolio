@@ -141,11 +141,11 @@ const Projects = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-4xl md:text-5xl font-bold pixel-text text-minecraft-gold mb-6">
-              <Blocks className="w-12 h-12 inline mr-4" />
+            <h1 className="text-5xl md:text-6xl font-bold pixel-text text-minecraft-gold mb-8">
+              <Blocks className="w-16 h-16 inline mr-4" />
               My Builds
             </h1>
-            <p className="text-white max-w-3xl mx-auto">
+            <p className="text-black text-xl max-w-3xl mx-auto">
               A showcase of my digital constructions and creative builds
             </p>
           </motion.div>
@@ -161,7 +161,7 @@ const Projects = () => {
               <button
                 key={category}
                 onClick={() => setActiveFilter(category)}
-                className={`minecraft-btn ${
+                className={`minecraft-btn text-lg px-6 py-3 ${
                   activeFilter === category
                     ? 'bg-minecraft-emerald'
                     : 'bg-minecraft-dirt hover:bg-minecraft-stone'
@@ -203,18 +203,18 @@ const Projects = () => {
                   </div>
                 </div>
                 
-                <div className="p-6">
-                  <h3 className="text-lg font-bold text-white mb-2 pixel-text">
+                <div className="p-8">
+                  <h3 className="text-xl font-bold text-black mb-3 pixel-text">
                     {project.title}
                   </h3>
-                  <p className="text-minecraft-gold text-xs mb-3 pixel-text">{project.category}</p>
-                  <p className="text-white text-xs mb-4">{project.description}</p>
+                  <p className="text-minecraft-gold text-base mb-4 pixel-text">{project.category}</p>
+                  <p className="text-black text-base mb-6">{project.description}</p>
                   
-                  <div className="flex flex-wrap gap-1">
+                  <div className="flex flex-wrap gap-2">
                     {project.tags.slice(0, 3).map((tag) => (
                       <span 
                         key={tag}
-                        className="px-2 py-1 inventory-slot text-xs text-white pixel-text"
+                        className="px-3 py-2 inventory-slot text-sm text-black pixel-text"
                         style={{ width: 'auto', height: 'auto', minWidth: '40px' }}
                       >
                         {tag}

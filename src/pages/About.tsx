@@ -70,7 +70,7 @@ const About = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-5xl md:text-6xl font-bold gradient-text mb-6 text-black">About Me</h1>
+            <h1 className="text-6xl md:text-7xl font-bold gradient-text mb-8 text-black">About Me</h1>
           </motion.div>
 
           <div className="grid lg:grid-cols-3 gap-12">
@@ -91,33 +91,33 @@ const About = () => {
 
               {/* Contact Info Card */}
               <div className="glass-card p-6 mb-8">
-                <h3 className="text-xl font-bold text-black mb-4">Contact Info</h3>
-                <div className="space-y-4">
+                <h3 className="text-2xl font-bold text-black mb-6">Contact Info</h3>
+                <div className="space-y-6">
                   <div className="flex items-center space-x-3">
-                    <div className="w-8 h-8 bg-neon-cyan/20 rounded-lg flex items-center justify-center">
-                      <span className="text-neon-cyan text-sm">✉</span>
+                    <div className="w-10 h-10 bg-neon-cyan/20 rounded-lg flex items-center justify-center">
+                      <span className="text-neon-cyan text-lg">✉</span>
                     </div>
                     <div>
-                      <p className="text-xs text-black">Email</p>
-                      <p className="text-black">hello@neepa.dev</p>
+                      <p className="text-sm text-black">Email</p>
+                      <p className="text-lg text-black">hello@neepa.dev</p>
                     </div>
                   </div>
                   <div className="flex items-center space-x-3">
-                    <div className="w-8 h-8 bg-neon-purple/20 rounded-lg flex items-center justify-center">
-                      <span className="text-neon-purple text-sm">📱</span>
+                    <div className="w-10 h-10 bg-neon-purple/20 rounded-lg flex items-center justify-center">
+                      <span className="text-neon-purple text-lg">📱</span>
                     </div>
                     <div>
-                      <p className="text-xs text-black">Phone</p>
-                      <p className="text-black">+1 (213) 352-2795</p>
+                      <p className="text-sm text-black">Phone</p>
+                      <p className="text-lg text-black">+1 (213) 352-2795</p>
                     </div>
                   </div>
                   <div className="flex items-center space-x-3">
-                    <div className="w-8 h-8 bg-neon-pink/20 rounded-lg flex items-center justify-center">
-                      <span className="text-neon-pink text-sm">📍</span>
+                    <div className="w-10 h-10 bg-neon-pink/20 rounded-lg flex items-center justify-center">
+                      <span className="text-neon-pink text-lg">📍</span>
                     </div>
                     <div>
-                      <p className="text-xs text-black">Location</p>
-                      <p className="text-black">Sacramento, California, USA</p>
+                      <p className="text-sm text-black">Location</p>
+                      <p className="text-lg text-black">Sacramento, California, USA</p>
                     </div>
                   </div>
                 </div>
@@ -133,30 +133,30 @@ const About = () => {
             >
               {/* About Text */}
               <div className="glass-card p-8">
-                <p className="text-black mb-4 leading-relaxed">
+                <p className="text-lg text-black mb-6 leading-relaxed">
                   I'm a Creative Frontend Developer and UI/UX Designer from California, working in web development and modern technologies. I enjoy turning complex problems into simple, beautiful and intuitive digital experiences.
                 </p>
-                <p className="text-black leading-relaxed">
+                <p className="text-lg text-black leading-relaxed">
                   My job is to build your website so that it is functional and user-friendly but at the same time attractive. Moreover, I add personal touch to your product and make sure that it is eye-catching and easy to use. My aim is to bring across your message and identity in the most creative way.
                 </p>
               </div>
 
               {/* Services */}
               <div className="glass-card p-8">
-                <h3 className="text-3xl font-bold text-black mb-8">What I'm doing</h3>
-                <div className="grid md:grid-cols-2 gap-6">
+                <h3 className="text-4xl font-bold text-black mb-10">What I'm doing</h3>
+                <div className="grid md:grid-cols-2 gap-8">
                   {services.map((service, index) => (
                     <motion.div
                       key={service.title}
-                      className="flex items-start space-x-4 p-4 rounded-lg bg-white/5 hover:bg-white/10 transition-colors"
+                      className="flex items-start space-x-4 p-6 rounded-lg bg-white/5 hover:bg-white/10 transition-colors"
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.5, delay: 0.1 * index }}
                     >
-                      <img src={service.icon} alt={service.title} className="w-10 h-10" />
+                      <img src={service.icon} alt={service.title} className="w-12 h-12" />
                       <div>
-                        <h4 className="font-bold text-black mb-2">{service.title}</h4>
-                        <p className="text-sm text-black">{service.description}</p>
+                        <h4 className="font-bold text-black mb-3 text-xl">{service.title}</h4>
+                        <p className="text-base text-black">{service.description}</p>
                       </div>
                     </motion.div>
                   ))}
@@ -165,25 +165,25 @@ const About = () => {
 
               {/* Testimonials */}
               <div className="glass-card p-8">
-                <h3 className="text-3xl font-bold text-black mb-8">Testimonials</h3>
-                <div className="grid md:grid-cols-2 gap-6">
+                <h3 className="text-4xl font-bold text-black mb-10">Testimonials</h3>
+                <div className="grid md:grid-cols-2 gap-8">
                   {testimonials.map((testimonial, index) => (
                     <motion.div
                       key={testimonial.name}
-                      className="bg-white/5 p-6 rounded-lg hover:bg-white/10 transition-colors"
+                      className="bg-white/5 p-8 rounded-lg hover:bg-white/10 transition-colors"
                       initial={{ opacity: 0, scale: 0.9 }}
                       animate={{ opacity: 1, scale: 1 }}
                       transition={{ duration: 0.5, delay: 0.1 * index }}
                     >
-                      <div className="flex items-center mb-4">
+                      <div className="flex items-center mb-6">
                         <img 
                           src={testimonial.avatar} 
                           alt={testimonial.name}
-                          className="w-12 h-12 rounded-full mr-4"
+                          className="w-14 h-14 rounded-full mr-4"
                         />
-                        <h4 className="font-bold text-black">{testimonial.name}</h4>
+                        <h4 className="font-bold text-black text-xl">{testimonial.name}</h4>
                       </div>
-                      <p className="text-sm text-black leading-relaxed">{testimonial.text}</p>
+                      <p className="text-base text-black leading-relaxed">{testimonial.text}</p>
                     </motion.div>
                   ))}
                 </div>
@@ -191,17 +191,17 @@ const About = () => {
 
               {/* Clients */}
               <div className="glass-card p-8">
-                <h3 className="text-3xl font-bold text-black mb-8">Clients</h3>
-                <div className="grid grid-cols-3 md:grid-cols-6 gap-4">
+                <h3 className="text-4xl font-bold text-black mb-10">Clients</h3>
+                <div className="grid grid-cols-3 md:grid-cols-6 gap-6">
                   {clients.map((client, index) => (
                     <motion.div
                       key={index}
-                      className="flex items-center justify-center p-4 bg-white/5 rounded-lg hover:bg-white/10 transition-colors"
+                      className="flex items-center justify-center p-6 bg-white/5 rounded-lg hover:bg-white/10 transition-colors"
                       initial={{ opacity: 0, scale: 0.8 }}
                       animate={{ opacity: 1, scale: 1 }}
                       transition={{ duration: 0.3, delay: 0.05 * index }}
                     >
-                      <img src={client} alt={`Client ${index + 1}`} className="max-w-full h-8 object-contain opacity-60 hover:opacity-100 transition-opacity" />
+                      <img src={client} alt={`Client ${index + 1}`} className="max-w-full h-10 object-contain opacity-60 hover:opacity-100 transition-opacity" />
                     </motion.div>
                   ))}
                 </div>
