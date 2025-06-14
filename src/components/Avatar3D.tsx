@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 import * as THREE from 'three';
 
 // Simple 3D Avatar Component (cartoon style)
-function CartoonAvatar({ position = [0, 0, 0], scale = 1, animationType = 'idle' }) {
+function CartoonAvatar({ position = [0, 0, 0] as [number, number, number], scale = 1, animationType = 'idle' }) {
   const groupRef = useRef<THREE.Group>(null);
   const [hovered, setHovered] = useState(false);
 
@@ -35,10 +35,22 @@ function CartoonAvatar({ position = [0, 0, 0], scale = 1, animationType = 'idle'
       onPointerOver={() => setHovered(true)}
       onPointerOut={() => setHovered(false)}
     >
+      {/* Hair */}
+      <mesh position={[0, 1.3, -0.1]}>
+        <sphereGeometry args={[0.6, 32, 32]} />
+        <meshPhongMaterial color={hovered ? "#8b4513" : "#4a2c2a"} />
+      </mesh>
+      
+      {/* Hair bangs */}
+      <mesh position={[0, 1.1, 0.4]}>
+        <sphereGeometry args={[0.4, 32, 32]} />
+        <meshPhongMaterial color={hovered ? "#8b4513" : "#4a2c2a"} />
+      </mesh>
+      
       {/* Head */}
       <mesh position={[0, 1, 0]}>
-        <sphereGeometry args={[0.5, 32, 32]} />
-        <meshPhongMaterial color={hovered ? "#00f5ff" : "#8b5cf6"} />
+        <sphereGeometry args={[0.45, 32, 32]} />
+        <meshPhongMaterial color={hovered ? "#ffdbcc" : "#fdbcb4"} />
       </mesh>
       
       {/* Eyes */}
@@ -61,30 +73,72 @@ function CartoonAvatar({ position = [0, 0, 0], scale = 1, animationType = 'idle'
         <meshPhongMaterial color="#000000" />
       </mesh>
       
-      {/* Body */}
-      <mesh position={[0, 0.2, 0]}>
-        <boxGeometry args={[0.6, 0.8, 0.3]} />
-        <meshPhongMaterial color={hovered ? "#ec4899" : "#10b981"} />
+      {/* Eyelashes */}
+      <mesh position={[-0.15, 1.15, 0.46]}>
+        <boxGeometry args={[0.02, 0.06, 0.01]} />
+        <meshPhongMaterial color="#000000" />
+      </mesh>
+      <mesh position={[0.15, 1.15, 0.46]}>
+        <boxGeometry args={[0.02, 0.06, 0.01]} />
+        <meshPhongMaterial color="#000000" />
+      </mesh>
+      
+      {/* Nose */}
+      <mesh position={[0, 1.05, 0.42]}>
+        <sphereGeometry args={[0.02, 8, 8]} />
+        <meshPhongMaterial color={hovered ? "#ffdbcc" : "#fdbcb4"} />
+      </mesh>
+      
+      {/* Lips */}
+      <mesh position={[0, 0.95, 0.42]}>
+        <sphereGeometry args={[0.06, 16, 8]} />
+        <meshPhongMaterial color={hovered ? "#ff69b4" : "#ff1493"} />
+      </mesh>
+      
+      {/* Body (dress-like) */}
+      <mesh position={[0, 0.1, 0]}>
+        <cylinderGeometry args={[0.45, 0.35, 0.9, 8]} />
+        <meshPhongMaterial color={hovered ? "#ff69b4" : "#da70d6"} />
       </mesh>
       
       {/* Arms */}
-      <mesh position={[-0.5, 0.2, 0]}>
-        <boxGeometry args={[0.15, 0.6, 0.15]} />
-        <meshPhongMaterial color={hovered ? "#ec4899" : "#10b981"} />
+      <mesh position={[-0.45, 0.3, 0]}>
+        <boxGeometry args={[0.12, 0.5, 0.12]} />
+        <meshPhongMaterial color={hovered ? "#ffdbcc" : "#fdbcb4"} />
       </mesh>
-      <mesh position={[0.5, 0.2, 0]}>
-        <boxGeometry args={[0.15, 0.6, 0.15]} />
-        <meshPhongMaterial color={hovered ? "#ec4899" : "#10b981"} />
+      <mesh position={[0.45, 0.3, 0]}>
+        <boxGeometry args={[0.12, 0.5, 0.12]} />
+        <meshPhongMaterial color={hovered ? "#ffdbcc" : "#fdbcb4"} />
+      </mesh>
+      
+      {/* Hands */}
+      <mesh position={[-0.45, 0.05, 0]}>
+        <sphereGeometry args={[0.08, 16, 16]} />
+        <meshPhongMaterial color={hovered ? "#ffdbcc" : "#fdbcb4"} />
+      </mesh>
+      <mesh position={[0.45, 0.05, 0]}>
+        <sphereGeometry args={[0.08, 16, 16]} />
+        <meshPhongMaterial color={hovered ? "#ffdbcc" : "#fdbcb4"} />
       </mesh>
       
       {/* Legs */}
       <mesh position={[-0.15, -0.5, 0]}>
-        <boxGeometry args={[0.2, 0.6, 0.2]} />
-        <meshPhongMaterial color="#3b82f6" />
+        <boxGeometry args={[0.15, 0.6, 0.15]} />
+        <meshPhongMaterial color={hovered ? "#ffdbcc" : "#fdbcb4"} />
       </mesh>
       <mesh position={[0.15, -0.5, 0]}>
-        <boxGeometry args={[0.2, 0.6, 0.2]} />
-        <meshPhongMaterial color="#3b82f6" />
+        <boxGeometry args={[0.15, 0.6, 0.15]} />
+        <meshPhongMaterial color={hovered ? "#ffdbcc" : "#fdbcb4"} />
+      </mesh>
+      
+      {/* Shoes */}
+      <mesh position={[-0.15, -0.85, 0.05]}>
+        <boxGeometry args={[0.18, 0.1, 0.25]} />
+        <meshPhongMaterial color={hovered ? "#ff1493" : "#c71585"} />
+      </mesh>
+      <mesh position={[0.15, -0.85, 0.05]}>
+        <boxGeometry args={[0.18, 0.1, 0.25]} />
+        <meshPhongMaterial color={hovered ? "#ff1493" : "#c71585"} />
       </mesh>
     </group>
   );
