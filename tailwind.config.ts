@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -79,6 +78,17 @@ export default {
 					creeper: '#00AA00',
 					sky: '#87CEEB',
 					night: '#191970'
+				},
+				// New palette colors from your image
+				palette: {
+					'cyan-bright': '#00CED1',
+					'cyan-green': '#00BFA5',
+					'yellow-bright': '#FFD700',
+					'gray-dark': '#4A4A4A',
+					'gray-medium': '#6B6B6B',
+					'gray-light': '#8A8A8A',
+					'gray-lighter': '#A8A8A8',
+					'gray-lightest': '#C6C6C6'
 				}
 			},
 			borderRadius: {
