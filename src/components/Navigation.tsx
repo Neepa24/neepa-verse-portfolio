@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -34,14 +35,14 @@ const Navigation = () => {
                 <Link
                   key={item.name}
                   to={item.path}
-                  className={`relative flex items-center space-x-2 px-4 py-2 rounded-lg transition-all duration-300 ${
+                  className={`relative flex items-center space-x-2 px-4 py-2 rounded-lg transition-all duration-300 text-lg ${
                     isActive 
                       ? 'text-neon-cyan bg-neon-cyan/10' 
-                      : 'text-gray-300 hover:text-white'
+                      : 'text-white hover:text-white'
                   }`}
                 >
-                  <Icon size={18} />
-                  <span className="font-medium">{item.name}</span>
+                  <Icon size={20} />
+                  <span className="font-medium text-white">{item.name}</span>
                   {isActive && (
                     <motion.div
                       className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-neon-cyan to-neon-purple"
@@ -93,15 +94,15 @@ const Navigation = () => {
                       <Link
                         key={item.name}
                         to={item.path}
-                        className={`flex items-center space-x-4 px-4 py-3 rounded-lg transition-colors ${
+                        className={`flex items-center space-x-4 px-4 py-3 rounded-lg transition-colors text-xl ${
                           isActive 
                             ? 'text-neon-cyan bg-neon-cyan/10' 
-                            : 'text-gray-300 hover:text-white hover:bg-white/5'
+                            : 'text-white hover:text-white hover:bg-white/5'
                         }`}
                         onClick={() => setIsOpen(false)}
                       >
-                        <Icon size={20} />
-                        <span className="font-medium text-lg">{item.name}</span>
+                        <Icon size={22} />
+                        <span className="font-medium text-white">{item.name}</span>
                       </Link>
                     );
                   })}
