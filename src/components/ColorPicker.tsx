@@ -22,7 +22,7 @@ const ColorPicker = ({ onColorChange, currentColor }: ColorPickerProps) => {
   return (
     <div className="fixed bottom-20 left-1/2 transform -translate-x-1/2 z-50">
       <motion.div
-        className="flex space-x-2 p-3 glass-card rounded-lg"
+        className="flex flex-wrap justify-center gap-2 p-3 glass-card rounded-lg max-w-2xl"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
