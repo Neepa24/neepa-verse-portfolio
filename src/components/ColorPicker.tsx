@@ -10,7 +10,6 @@ const ColorPicker = ({ onColorChange, currentColor }: ColorPickerProps) => {
   const colors = [
     { name: 'Sky Blue', value: 'bg-minecraft-sky', cssValue: 'linear-gradient(to bottom, #87CEEB 0%, #4682B4 50%, #191970 100%)' },
     { name: 'Cyan Bright', value: 'bg-palette-cyan-bright', cssValue: '#00CED1' },
-    { name: 'Cyan Green', value: 'bg-palette-cyan-green', cssValue: '#00BFA5' },
     { name: 'Yellow Bright', value: 'bg-palette-yellow-bright', cssValue: '#FFD700' },
     { name: 'Gray Dark', value: 'bg-palette-gray-dark', cssValue: '#4A4A4A' },
     { name: 'Gray Medium', value: 'bg-palette-gray-medium', cssValue: '#6B6B6B' },
@@ -22,7 +21,7 @@ const ColorPicker = ({ onColorChange, currentColor }: ColorPickerProps) => {
   return (
     <div className="fixed bottom-20 left-1/2 transform -translate-x-1/2 z-50">
       <motion.div
-        className="flex flex-wrap justify-center gap-2 p-3 glass-card rounded-lg max-w-2xl"
+        className="flex justify-center gap-2 p-3 glass-card rounded-lg"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
